@@ -537,9 +537,9 @@ main (int argc, char **argv)
 	g_set_prgname (me);
 	gsf_init ();
 
-	bindtextdomain (GETTEXT_PACKAGE, GSFLOCALEDIR);
-	textdomain (GETTEXT_PACKAGE);
-	setlocale (LC_ALL, "");
+	// bindtextdomain (GETTEXT_PACKAGE, GSFLOCALEDIR);
+	// textdomain (GETTEXT_PACKAGE);
+	// setlocale (LC_ALL, "");
 
 	usage = _("SUBCOMMAND ARCHIVE...");
 	ocontext = g_option_context_new (usage);

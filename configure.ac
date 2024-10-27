@@ -184,18 +184,6 @@ AC_ARG_WITH([typelib-dir],
 )
 AC_SUBST(TYPELIBDIR)
 
-AX_APPEND_COMPILE_FLAGS([-Wall -Werror=init-self -Werror=missing-include-dirs \
-			 -Wsign-compare -Werror=pointer-arith \
-			 -Wchar-subscripts -Wwrite-strings \
-			 -Wdeclaration-after-statement -Wnested-externs \
-			 -Wmissing-noreturn \
-			 -Werror=missing-prototypes -Werror=nested-externs \
-			 -Werror=implicit-function-declaration \
-			 -Wmissing-declarations -Wno-pointer-sign \
-			 -Werror=format-security -Wbitwise -Wcast-to-as \
-			 -Wdefault-bitfield-sign -Wdo-while -Wparen-string \
-			 -Wptr-subtraction-blows -Wreturn-void -Wtypesign \
-			 -Wstrict-prototypes -Wno-error=format-nonliteral])
 
 AC_CHECK_DECL(fdopen, fdopen_works=yes, fdopen_works=no)
 if test $fdopen_works = no ; then
@@ -315,12 +303,7 @@ AM_CONDITIONAL(CROSS_COMPILING, test x"$cross_compiling" != "xno")
 ##################################################
 # Checks for gtk-doc and docbook-tools
 ##################################################
-gtk_doc_installed=true
-#ifdef([GTK_DOC_CHECK],[GTK_DOC_CHECK([1.12])],[gtk_doc_installed=false])
-# I would have liked to conditionalize this, but 
-# that appears to break other things http://bugzilla.gnome.org/show_bug.cgi?id=156399
-dnl AX_REQUIRE_DEFINED([GTK_DOC_CHECK])
-GTK_DOC_CHECK([1.12])
+gtk_doc_installed=false
 AM_CONDITIONAL(GTK_DOC_INSTALLED, $gtk_doc_installed)
 
 dnl ***********************************************************************************

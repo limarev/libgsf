@@ -47,13 +47,4 @@ GTKDOC_LIBS = $(top_builddir)/gsf/libgsf-1.la $(LIBGSF_LIBS)
 manpagedir   = $(mandir)/man1
 manpage_DATA = gsf-vba-dump.1 gsf.1 gsf-office-thumbnailer.1
 
-if GTK_DOC_INSTALLED
-include $(top_srcdir)/gtk-doc.make
-CLEANFILES += gsf-scan.*
-.PHONY : dist-hook-local
-EXTRA_DIST += $(manpage_DATA)
-else
-EXTRA_DIST = $(manpage_DATA)
-endif
-
-EXTRA_DIST += developer/blocksize.html
+EXTRA_DIST = developer/blocksize.html
