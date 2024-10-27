@@ -36,5 +36,5 @@ libgsf-gvfs-1.pc
 test-driver
 ABOUT-NLS
 config.rpath
-cmake*
+cmake-*
 .idea
