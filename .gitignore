@@ -38,3 +38,5 @@ ABOUT-NLS
 config.rpath
 cmake-*
 .idea
+build*
+CMakeUserPresets.json

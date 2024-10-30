@@ -1,0 +1,13 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/gsf_targets.cmake")
+
+if (TARGET gsf::gsf)
+message(STATUS "Found gsf: TRUE (version: @PROJECT_VERSION@)")
+else()
+message(STATUS "Failed to find target gsf::gsf")
+endif()
+
+if (gsf_FIND_COMPONENTS)
+message(WARNING "gsf package has no components")
+endif()
